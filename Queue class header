@@ -1,0 +1,39 @@
+#ifndef GO_QUEUE_H
+#define GO_QUEUE_H
+#include <cstdlib>
+#include "info.h"
+class Queue {
+public:
+class Node {
+public:
+Node() {
+x.NumberOfDays = 0;
+x.Available = 1;
+x.CopyDate.day = rand() % 31;
+x.CopyDate.mon = rand() % 12;
+x.CopyDate.year = rand() % 35 + 1985;
+x.BorrowerName = "";
+x.BorrowDate.day = 0;
+x.BorrowDate.mon = 0;
+x.BorrowDate.year = 0;
+}
+info x;
+Node *next;
+friend class Queue;
+};
+private:
+Node *Front;
+Node *tail;
+int counterSize;
+int NumberOfCopies;
+public:
+Queue();
+Queue(int n);
+void Push(info y);
+void Push2();
+info front();
+int size();
+void pop();
+};
+
+#endif //GO_QUEUE_H
