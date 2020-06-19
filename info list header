@@ -1,0 +1,22 @@
+#ifndef UNTITLED31_INFOLIST_H
+#define UNTITLED31_INFOLIST_H
+#include "Queue.h"
+class infolist {
+public:
+string BookName;
+int ISBN;
+int NumberOfCopiess;
+int NumberOfBorrowedBooks;
+int AvailableBooksCounter;
+Queue q;
+infolist() {
+NumberOfBorrowedBooks = 0;
+AvailableBooksCounter = 0;
+ISBN = 0;
+BookName = "";
+NumberOfCopiess = 0;
+q = Queue(NumberOfCopiess);
+}
+};
+
+#endif //UNTITLED31_INFOLIST_H
