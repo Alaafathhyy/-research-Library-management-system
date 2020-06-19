@@ -1,0 +1,59 @@
+#include "Controller.h"
+Queue Controller::borrow(Queue oldQ) {
+info temp = oldQ.front();
+if (temp.Available == 1) {
+oldQ.pop();
+oldQ.Push2();
+} else {
+cout << "No available copies" << endl;
+}
+return (oldQ);
+}
+Queue Controller::returnBook(Queue oldQ) {
+Queue newQ;
+info s;
+cout << "Enter the Name of the borrower" << endl;
+cin >> s.BorrowerName;
+int tempsize = oldQ.size();
+bool flag=true;
+for (int i = 0; i < tempsize; i++) {
+info temp = oldQ.front();
+if (s.BorrowerName == temp.BorrowerName) {
+flag=false;
+s.Available = 1;
+s.NumberOfDays = 0;
+s.BorrowerName = "";
+s.BorrowDate.day = 0;
+s.BorrowDate.mon = 0;
+s.BorrowDate.year = 0;
+newQ.Push(s);
+oldQ.pop();
+}
+else {
+newQ.Push(temp);
+oldQ.pop();
+}
+}
+if(flag)
+{
+cout<<"Not Found "<<endl;
+}
+return newQ;
+}
+
+void Controller::printQ(Queue a) {
+int tempsize = a.size();
+for (int i = 0; i < tempsize; i++) {
+info temp = a.front();
+info temp2 = a.front();
+cout << "Availability " << temp.Available << endl ;
+cout<< " Borrower Name " << temp.BorrowerName << endl ;
+cout<<"Borrow Date " << temp.BorrowDate.day <<"/"<< temp.BorrowDate.mon
+<<"/"<<temp.BorrowDate.year << endl;
+cout<<"copy date " << temp.CopyDate.day <<"/"<< temp.CopyDate.mon
+<<"/"<<temp.CopyDate.year << endl;
+cout<<"number of days to return the book ="<<temp.NumberOfDays<<endl;
+a.pop();
+a.Push(temp2);
+}
+}
