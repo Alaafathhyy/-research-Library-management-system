@@ -1,0 +1,25 @@
+#ifndef GO_INFO_H
+#define GO_INFO_H
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+class info {
+public:
+struct date {int day, mon, year;};
+int NumberOfDays;
+bool Available;
+date CopyDate;
+string BorrowerName;
+date BorrowDate;
+info() {
+NumberOfDays = 0;
+Available = 1;
+CopyDate.day = rand() % 31;
+CopyDate.mon = rand() % 12;
+CopyDate.year = rand() % 35 + 1985;
+BorrowerName = "";
+BorrowDate.day = 0;
+BorrowDate.mon = 0;
+BorrowDate.year = 0;
+}
+};
