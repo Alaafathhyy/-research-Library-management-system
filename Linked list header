@@ -1,0 +1,27 @@
+#ifndef UNTITLED31_LIST_H
+#define UNTITLED31_LIST_H
+#include "infolist.h"
+#include "Controller.h"
+class List {
+public:
+class Node1
+{
+public:
+infolist y;
+Node1* next;
+};
+public:
+Node1* head;
+int counter;
+Controller a ;
+public:
+List();
+void insert(infolist r);
+int size() ;
+void Print(); // Print list elements
+void Find1(string b);
+void Find2(string b);
+void Find3() ;
+
+};
+#endif //UNTITLED31_LIST_H
