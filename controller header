@@ -1,0 +1,10 @@
+#ifndef UNTITLED31_CONTROLLER_H
+#define UNTITLED31_CONTROLLER_H
+#include "Queue.h"
+class Controller {
+public:
+Queue borrow(Queue oldQ);
+Queue returnBook(Queue oldQ);
+void printQ(Queue a);
+};
+#endif //UNTITLED31_CONTROLLER_H
