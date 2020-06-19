@@ -1,0 +1,38 @@
+#include "List.h"
+#include "Controller.h"
+List::List() {
+head = NULL;
+counter = 0;
+}
+void List::insert(infolist r) {
+Node1 *temp = new Node1;
+temp->y = r;
+temp->next = NULL;
+if (head == NULL) {
+head = temp;
+counter++;
+return;
+}
+Node1 *curr = head;
+while (curr->next != NULL) {
+curr = curr->next;
+}
+curr->next = temp;
+counter++;
+}
+int List::size() { return counter; }
+void List::Print() // Print list elements
+{
+cout<<endl;
+cout << "List: ";
+Node1 *cur = head;
+while (cur != 0) {
+cout << cur->y.NumberOfCopiess << " " << cur->y.BookName << " " << cur-
+>y.ISBN;
+cout << endl;
+a.printQ(cur->y.q);
+cout<<"//////////////////////////"<<endl;
+cur = cur->next;
+}
+cout << endl;
+}
