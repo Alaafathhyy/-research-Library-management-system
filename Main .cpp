@@ -2,6 +2,7 @@
 #include<string>
 #include "List.h"
 using namespace std;
+//this code unsing different datastructures and manipulate them to make a library managment system
 int main() {
 int copiesCounter =0;
 List a;
